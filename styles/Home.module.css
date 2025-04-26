@@ -223,7 +223,7 @@
   text-transform: uppercase;
 }
 
-@media (min-width: 425px) {
+@media (max-width: 426px) {
   .parameterContainer{
     width: 174%;
     flex-direction: column;
@@ -243,6 +243,7 @@
   }
   .parameterCard{
     padding: 0rem;
+    width: 82%;
   }
   .tabContainer{
     gap: 36%;
@@ -260,7 +261,7 @@
     font-weight: 600;
   }
   .parameterContainer{
-    width: 174%;
+    width:242%;
     flex-direction: column;
   }
   .weatherContainer {
