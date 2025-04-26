@@ -8,6 +8,8 @@
   padding: 2rem;
   font-family: 'Merriweather', serif;
   color: #F9F7F7;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .title {
@@ -19,22 +21,23 @@
 
 @media (min-width: 768px) {
   .title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
 .tabContainer {
-  width: 90%;
+  width: 100%;
+  overflow: hidden;
   max-width: 550px;
-  margin-top: 4rem;
   display: flex;
-  justify-content: space-between;
+  gap: 55%;
 }
 
-@media (min-width: 768px) {
+
+  
+@media (max-width: 768px) {
   .tabContainer {
     justify-content: center;
-    gap: 1rem;
   }
 }
 
@@ -51,7 +54,6 @@
 }
 
 .weatherContainer {
-  margin-top: 4rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -166,9 +168,7 @@
 }
 
 @media (min-width: 768px) {
-  .errorImage {
-    margin-top: -300px;
-  }
+  
 }
 
 .weatherInfo {
@@ -181,7 +181,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
 }
 
 .cityName {
@@ -195,22 +194,18 @@
 .temperature {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-top: 0.5rem;
 }
 
 .parameterContainer {
-  width: 90%;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   gap: 1.25rem;
   justify-content: center;
-  margin-top: 2rem;
+  align-items: center;
 }
 
-@media (min-width: 768px) {
-  .parameterContainer {
-    flex-direction: row;
-  }
+.errorImage {
+  margin-top: 300px;
 }
 
 .parameterCard {
@@ -219,8 +214,8 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -233,4 +228,45 @@
   font-size: 1.125rem;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+
+@media (max-width: 320px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .tabContainer{
+    gap: 58px;
+  }
+  .cityName {
+    font-size: 1.2rem;
+  }
+  .image{
+    width: 26px;
+    height: auto;
+  }
+  .temperature {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .parameterContainer{
+    width: 174%;
+    flex-direction: column;
+  }
+  .weatherContainer {
+    width: 107%;
+    margin-top: 16px;
+  }
+  .weatherInfo {
+    margin-top: -24px;
+  }
+
+  .errorText {
+    font-size: 1.25rem;
+  }
+  
+  .errorImage {
+    margin-top: 325px;
+  }
+
 }

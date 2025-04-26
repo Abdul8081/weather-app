@@ -277,17 +277,19 @@ export default function WeatherPage() {
                 alt="Country Flag"
                 width={30}
                 height={30}
+                className={styles.image}
               />
             </div>
 
-            <p className={styles.weatherDescription}>{weatherData.weather[0].description}</p>
-
-            <Image
-              src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
-              alt="Weather icon"
-              width={50}
-              height={50}
-            />
+            <div className={styles.cityContainer}>
+              <p className={styles.weatherDescription}>{weatherData.weather[0].description}</p>
+              <Image
+                src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
+                alt="Weather icon"
+                width={50}
+                height={50}
+              />
+            </div>
 
             <p className={styles.temperature}>{`${weatherData.main.temp} °C`}</p>
 
