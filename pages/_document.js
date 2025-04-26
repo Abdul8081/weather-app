@@ -8,6 +8,7 @@ export default function Document() {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
         />
+        <link rel="icon" href="./cloud_app.avif" />
       </Head>
       <body>
         <Main />

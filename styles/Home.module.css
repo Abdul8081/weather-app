@@ -10,6 +10,7 @@
   color: #F9F7F7;
   overflow-x: hidden;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .title {
@@ -237,6 +238,7 @@
   }
   .tabContainer{
     gap: 58px;
+    flex-wrap: nowrap;
   }
   .cityName {
     font-size: 1.2rem;
