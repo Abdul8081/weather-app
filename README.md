@@ -1,3 +1,5 @@
+To see how it works click on the link : https://weather-app-sooty-tau-22.vercel.app
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
 ## Getting Started
