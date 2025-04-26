@@ -1,168 +1,236 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(to bottom right, #112D4E, #3F72AF);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+  padding: 2rem;
+  font-family: 'Merriweather', serif;
+  color: #F9F7F7;
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+.title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  text-align: center;
+}
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
   }
 }
 
-.main {
+.tabContainer {
+  width: 90%;
+  max-width: 550px;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .tabContainer {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+.tab {
+  cursor: pointer;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.activeTab {
+  background-color: rgba(219, 226, 239, 0.5);
+}
+
+.weatherContainer {
+  margin-top: 4rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  align-items: center;
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
+.grantAccess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
+.locationIcon {
+  margin-bottom: 2rem;
 }
 
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
+.grantAccessTitle {
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
-.ctas {
-  display: flex;
-  gap: 16px;
+.grantAccessText {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  margin-bottom: 1.75rem;
 }
 
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
+.grantAccessButton {
+  background-color: #3F72AF;
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  padding: 0.625rem 2rem;
   border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
   cursor: pointer;
+}
+
+.searchForm {
+  width: 90%;
+  max-width: 550px;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.searchInput {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 1.25rem;
+  background-color: rgba(219, 226, 239, 0.5);
+  border-radius: 0.5rem;
+  color: white;
+  border: none;
+}
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.searchInput:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 0;
+}
+
+.searchButton {
+  background-color: #3F72AF;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+  border: none;
+  cursor: pointer;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
-}
-
-.footer {
-  grid-row-start: 3;
+.loading {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  align-items: center;
 }
 
-.footer a {
+.loadingText {
+  text-transform: uppercase;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -350px;
+}
+
+@media (min-width: 768px) {
+  .error {
+    margin-top: -300px;
+  }
+}
+
+.errorText {
+  font-size: 1.5rem;
+}
+
+.errorImage {
+  margin-top: -350px;
+}
+
+@media (min-width: 768px) {
+  .errorImage {
+    margin-top: -300px;
+  }
+}
+
+.weatherInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cityContainer {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.footer img {
-  flex-shrink: 0;
+.cityName {
+  font-size: 2rem;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
+.weatherDescription {
+  font-size: 1.125rem;
 }
 
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
+.temperature {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
 
-  .main {
-    align-items: center;
-  }
+.parameterContainer {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
 
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
-    flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+@media (min-width: 768px) {
+  .parameterContainer {
+    flex-direction: row;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+.parameterCard {
+  background-color: rgba(219, 226, 239, 0.5);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .parameterCard {
+    width: 200px;
   }
+}
+
+.parameterTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }
