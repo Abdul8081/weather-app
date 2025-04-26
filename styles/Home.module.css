@@ -232,12 +232,15 @@
 }
 
 
-@media (max-width: 320px) {
+@media (max-width: 375px) {
   .title {
     font-size: 1.5rem;
   }
+  .parameterCard{
+    padding: 0rem;
+  }
   .tabContainer{
-    gap: 58px;
+    gap: 36%;
     flex-wrap: nowrap;
   }
   .cityName {
