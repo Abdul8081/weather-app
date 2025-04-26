@@ -34,14 +34,6 @@
   gap: 55%;
 }
 
-
-  
-@media (max-width: 768px) {
-  .tabContainer {
-    justify-content: center;
-  }
-}
-
 .tab {
   cursor: pointer;
   font-size: 0.875rem;
@@ -229,6 +221,19 @@
   font-size: 1.125rem;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+@media (min-width: 425px) {
+  .parameterContainer{
+    width: 174%;
+    flex-direction: column;
+  }
+  .parameterCard{
+    padding: 0rem;
+  }
+  .title {
+    font-size: 1.75rem;
+  }
 }
 
 
